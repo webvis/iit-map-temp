@@ -1,0 +1,27 @@
+@use 'sass:color';
+
+@use '@material/theme/color-palette';
+
+// Svelte Colors!
+@use '@material/theme/index' as theme with (
+  $primary: #bf4400,
+  $secondary: #676778,
+  $surface: #fff,
+  $background: #fff,
+  $error: color-palette.$red-900
+);
+
+html,
+body {
+  background-color: theme.$surface;
+  color: theme.$on-surface;
+
+  // apply the theme to anymapper styles
+  --anymapper-primary-bg-color: #{theme.$primary};
+  --anymapper-normal-bg-color: #{theme.$surface};
+  --anymapper-normal-fg-color: #{theme.$on-surface};
+}
+
+a {
+  color: theme.$primary;
+}
